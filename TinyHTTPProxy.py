@@ -8,7 +8,7 @@ on BaseHTTPServer (or server.http), and behaves as an HTTP proxy.
 
 from __future__ import print_function
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 import select, socket, sys
 
@@ -126,7 +126,8 @@ class ProxyHandler (hserv.BaseHTTPRequestHandler):
     do_HEAD = do_GET
     do_POST = do_GET
     do_PUT  = do_GET
-    do_DELETE=do_GET
+    do_DELETE = do_GET
+    do_OPTIONS = do_GET
 
 class ThreadingHTTPServer (ThreadingMixIn, hserv.HTTPServer):
     pass
